@@ -35,4 +35,13 @@ public class PlayerMovement : MonoBehaviour
             RB2D.AddForce(transform.up * JumpF);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("EnemyAttackCollider"))
+        {
+            print("Recibiste damage");
+        }
+    }
+    
 }

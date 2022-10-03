@@ -6,12 +6,12 @@ public class Enemy : MonoBehaviour
 {
     public float HitDamage;
     public float Vida;
-    float VidaAcctualDelEemigo; 
+    float VidaAcctualDelEemigo;
 
 
     void Start()
     {
-        VidaAcctualDelEemigo = Vida; 
+        VidaAcctualDelEemigo = Vida;
     }
 
 
