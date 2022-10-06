@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
     {
         if(VidaActualDelEnemigo <= 0)
         {
-            Destroy(gameObject);
+            Destroy(gameObject,2);
         }
     }
 

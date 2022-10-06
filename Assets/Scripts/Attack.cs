@@ -6,15 +6,17 @@ public class Attack : MonoBehaviour
 {
     public Animator anim;
     public GameObject AtaqueCollider;
+    bool EsperaDeGolpe;
 
     void Start()
     {
         anim = GetComponent<Animator>();
+        EsperaDeGolpe = true;
     }
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.C) && CheckGround.IsGrounded)
+        if(Input.GetKeyDown(KeyCode.C) && CheckGround.IsGrounded && EsperaDeGolpe)
         {
             anim.SetTrigger("Ataca");
         }
@@ -24,10 +26,12 @@ public class Attack : MonoBehaviour
     {
         PlayerMovement.CanMove = false;
         AtaqueCollider.SetActive(true);
+        EsperaDeGolpe=false;
     }
     public void DejaDeAtacar()
     {
         PlayerMovement.CanMove = true;
         AtaqueCollider.SetActive(false);
+        EsperaDeGolpe = true;
     }
 }
