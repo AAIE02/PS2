@@ -1,4 +1,4 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,16 +8,19 @@ public class PlayerMovement : MonoBehaviour
 
     public float velocidad;
     public float JumpF;
+    public static bool CanMove;
 
 
     void Start()
     {
+        CanMove = true;
         transform.localPosition = new Vector3(-7f, -2.9f, 0f);
         RB2D = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
+        if (CanMove) { 
         //Movimiento
         if (Input.GetKey(KeyCode.D))
         {
@@ -33,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && CheckGround.IsGrounded)
         {
             RB2D.AddForce(transform.up * JumpF);
+        }
         }
     }
 

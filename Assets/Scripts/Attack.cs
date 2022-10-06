@@ -14,15 +14,20 @@ public class Attack : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.C))
+        if(Input.GetKeyDown(KeyCode.C) && CheckGround.IsGrounded)
         {
-            anim.SetTrigger("IsAttacking");
-            AtaqueCollider.SetActive(true);
+            anim.SetTrigger("Ataca");
         }
-        else
-        {
-            anim.ResetTrigger("IsAttacking");
-            AtaqueCollider.SetActive(false);
-        }
+    }
+
+    public void Ataca()
+    {
+        PlayerMovement.CanMove = false;
+        AtaqueCollider.SetActive(true);
+    }
+    public void DejaDeAtacar()
+    {
+        PlayerMovement.CanMove = true;
+        AtaqueCollider.SetActive(false);
     }
 }
