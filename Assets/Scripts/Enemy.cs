@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     float VidaActualDelEnemigo;
 
     public GameObject PlayerHit;
-    float force = 30f;
+    float force = 150f;
 
 
     void Start()
@@ -36,7 +36,7 @@ public class Enemy : MonoBehaviour
 
         if (collision.gameObject.CompareTag("AtaqueJugador"))
         {
-            Vector2 PushDirection = (transform.up - PlayerHit.transform.position);
+            Vector2 PushDirection = (transform.forward - PlayerHit.transform.position);
             gameObject.GetComponent<Rigidbody2D>().AddForce(PushDirection * force);
 
         }
