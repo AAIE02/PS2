@@ -32,5 +32,7 @@ public class Enemy : MonoBehaviour
         }
     }
 }
-// 1.- Ataque del enemigo y detectar si se hizo parry en el momento correcto
-// 2.- Agregar enemigo Tank
+// 1.- Nivel y cuando se golpea a un enemigo salga volando y muera despues de 2 segundos
+// 2.- Hacer un spawner en el que aparezcan muchos enemigos, deben salir volando en distintas direcciones y velocidades
+// 3.- Hacer controles para movil
+// 4.- Compilar
