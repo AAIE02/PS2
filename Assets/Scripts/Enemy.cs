@@ -43,7 +43,7 @@ public class Enemy : MonoBehaviour
         }
     }
 }
-
+//XD
 
 // 1.- Nivel y cuando se golpea a un enemigo salga volando y muera despues de 2 segundos
 // 2.- Hacer un spawner en el que aparezcan muchos enemigos, deben salir volando en distintas direcciones y velocidades
