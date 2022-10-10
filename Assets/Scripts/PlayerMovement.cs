@@ -4,7 +4,50 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    Rigidbody2D RB2D;
+
+    public float velocidad;
+    public float velocidadSalto;
+    public static bool CanMove;
+
+    public static  Transform CheckGroundTf;
+    Rigidbody2D rigi;
+
+    void Start()
+    {
+        CanMove = true;
+        rigi = GetComponent<Rigidbody2D>();
+    }
+
+    void Update()
+    {
+        if (CanMove)
+        {
+            float h = Input.GetAxisRaw("Horizontal"); 
+        Vector2 moveToRigi = new Vector2(h * velocidad, rigi.velocity.y);
+
+        if (Input.GetButtonDown("Jump")) 
+        {
+            Collider2D col = Physics2D.OverlapCircle(CheckGroundTf.position, 0.1f);
+            if (col) 
+            {
+                moveToRigi.y = velocidadSalto;
+            }
+        }
+        rigi.velocity = moveToRigi;
+        FlipControl(h);
+        }
+    }
+    void FlipControl(float h)
+    {
+        Vector3 escalaActual = transform.localScale;
+        if (h != 0)
+        {
+            escalaActual.x = h > 0f ? 1f : -1f;
+        }
+        transform.localScale = escalaActual;
+    }
+
+    /*Rigidbody2D RB2D;
 
     public float velocidad;
     public float JumpF;
@@ -37,9 +80,12 @@ public class PlayerMovement : MonoBehaviour
         {
             RB2D.AddForce(transform.up * JumpF);
         }
-        }
-    }
+        }*/
+}
 
+   
+    
+    
     /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("EnemyAttackCollider"))
@@ -47,5 +93,5 @@ public class PlayerMovement : MonoBehaviour
             print("Recibiste damage");
         }
     }*/
-    
-}
+
+//}

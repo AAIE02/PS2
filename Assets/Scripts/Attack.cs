@@ -16,8 +16,9 @@ public class Attack : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.C) && CheckGround.IsGrounded && EsperaDeGolpe)
+        if(Input.GetKeyDown(KeyCode.C)  && EsperaDeGolpe)
         {
+                                                    //&& PlayerMovement.CheckGroundTf
             anim.SetTrigger("Ataca");
         }
     }

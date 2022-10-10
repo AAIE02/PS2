@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     public float Vida;
     float VidaActualDelEnemigo;
 
+
     public GameObject PlayerHit;
     float force = 150f;
 
