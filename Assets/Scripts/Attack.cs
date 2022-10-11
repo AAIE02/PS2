@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class Attack : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class Attack : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.C)  && EsperaDeGolpe)
+        if(CrossPlatformInputManager.GetButtonDown("Hit")  && EsperaDeGolpe)
         {
                                                     //&& PlayerMovement.CheckGroundTf
             anim.SetTrigger("Ataca");
@@ -36,3 +37,9 @@ public class Attack : MonoBehaviour
         EsperaDeGolpe = true;
     }
 }
+
+/*if (Input.GetKeyDown(KeyCode.C) && EsperaDeGolpe)
+{
+    //&& PlayerMovement.CheckGroundTf
+    anim.SetTrigger("Ataca");
+}*/
