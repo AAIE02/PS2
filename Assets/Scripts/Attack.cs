@@ -37,9 +37,3 @@ public class Attack : MonoBehaviour
         EsperaDeGolpe = true;
     }
 }
-
-/*if (Input.GetKeyDown(KeyCode.C) && EsperaDeGolpe)
-{
-    //&& PlayerMovement.CheckGroundTf
-    anim.SetTrigger("Ataca");
-}*/

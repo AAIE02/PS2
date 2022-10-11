@@ -8,11 +8,6 @@ public class Enemy : MonoBehaviour
     public float Vida;
     float VidaActualDelEnemigo;
 
-
-    public GameObject PlayerHit;
-    float force = 150f;
-
-
     void Start()
     {
         VidaActualDelEnemigo = Vida;
@@ -37,15 +32,16 @@ public class Enemy : MonoBehaviour
 
         if (collision.gameObject.CompareTag("AtaqueJugador"))
         {
-            Vector2 PushDirection = (transform.forward - PlayerHit.transform.position);
-            gameObject.GetComponent<Rigidbody2D>().AddForce(PushDirection * force);
+            var direction = Random.Range(-1000, 1000);
+            var isRight = collision.gameObject.transform.position.x < ;
+            //Fuerza
+            var force = Random.Range(3000, 5000);
+            collision.gameObject.GetComponent<Rigidbody2D>().AddForce(direction, force);
 
         }
     }
 }
-//XD
 
-// 1.- Nivel y cuando se golpea a un enemigo salga volando y muera despues de 2 segundos
+
+// 1.- Cuando se golpea a un enemigo salga volando y muera despues de 2 segundos
 // 2.- Hacer un spawner en el que aparezcan muchos enemigos, deben salir volando en distintas direcciones y velocidades
-// 3.- Hacer controles para movil
-// 4.- Compilar
