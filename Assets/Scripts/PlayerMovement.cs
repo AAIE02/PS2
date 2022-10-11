@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float velocidadSalto;
     public static bool CanMove;
 
-    public static  Transform CheckGroundTf;
+    public  Transform CheckGroundTf;
     Rigidbody2D rigi;
 
     void Start()
