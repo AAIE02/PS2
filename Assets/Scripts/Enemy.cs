@@ -36,9 +36,9 @@ public class Enemy : MonoBehaviour
             //var isRight = collision.gameObject.transform.position.x < ;
             //Fuerza
             var force = Random.Range(3000, 5000);
-            collision.gameObject.GetComponent<Rigidbody2D>().AddForce(direction, force);*/
+            collision.gameObject.GetComponent<Rigidbody2D>().AddForce(direction, force);
 
-        }*/
+        } */
     }
 }
 
