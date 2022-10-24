@@ -45,6 +45,5 @@ public class GameManager : MonoBehaviour
     public void AddSacredSoul() //agrega 1 vida al player
     {
         SacredSoul++;
-
     }
 }

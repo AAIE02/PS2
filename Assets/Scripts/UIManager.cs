@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-    public static UIManager instance;
+    public static UIManager instance { get; private set; }
     public TextMeshProUGUI text;
     int soul;
 
@@ -18,9 +18,9 @@ public class UIManager : MonoBehaviour
             instance = this;
         }
     }
-    public void ChangeScore(int coinValue)
+    public void ChangeScore(int soulValue)
     {
-        soul += coinValue;
+        soul += soulValue;
         text.text = "X" + soul.ToString();
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 public class HP_Bar : MonoBehaviour
 {
     private Slider Hp_Bar;
-    private Slider
+    //private Slider
 
     private void Start()
     {
@@ -15,10 +15,10 @@ public class HP_Bar : MonoBehaviour
 
     public void ChangeValueMax(float HPTotal)
     {
-        Hp_Bar.MaxValue = HPTotal;
+        Hp_Bar.maxValue = HPTotal;
     }
 
-    public void ChangeCurrentHP(cantidadHP)
+    public void ChangeCurrentHP(float cantidadHP)
     {
         Hp_Bar.value = cantidadHP;
     }
