@@ -15,7 +15,7 @@ public class HP_Bar : MonoBehaviour
 
     public void ChangeValueMax(float HPTotal)
     {
-        Hp_Bar.maxValue = HPTotal;
+        //Hp_Bar.maxValue = HPTotal;
     }
 
     public void ChangeCurrentHP(float cantidadHP)
