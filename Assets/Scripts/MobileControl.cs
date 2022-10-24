@@ -47,5 +47,4 @@ public class MobileControl : MonoBehaviour
         }
         transform.localScale = escalaActual;
     }
-
 }

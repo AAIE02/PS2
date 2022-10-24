@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Soul : MonoBehaviour
 {
-    public int CoinValue = 1;
+    public int SoulValue = 1;
     //[SerializeField] private AudioClip Coin;
 
     public enum Type
@@ -26,8 +26,9 @@ public class Soul : MonoBehaviour
     private void Collect(GameObject player)
     {
         GameManager.Instance.AddSoul();
+        GameManager.Instance.AddSacredSoul();
         //SoundManager.Instance.PlaySound(Coin);
-        UIManager.instance.ChangeScore(CoinValue);
+        UIManager.instance.ChangeScore(SoulValue);
         Destroy(gameObject);
     }
 }
