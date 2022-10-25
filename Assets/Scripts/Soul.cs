@@ -23,7 +23,7 @@ public class Soul : MonoBehaviour
         }
     }
 
-    private void Collect(GameObject other)
+    private void Collect(GameObject player)
     {
         GameManager.Instance.AddSoul();
         GameManager.Instance.AddSacredSoul();
