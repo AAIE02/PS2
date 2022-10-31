@@ -2385,6 +2385,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1729318061}
   - component: {fileID: 1729318062}
+  - component: {fileID: 1729318063}
   m_Layer: 5
   m_Name: HP_Bar
   m_TagString: Untagged
@@ -2459,12 +2460,24 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 100
   m_WholeNumbers: 1
-  m_Value: 1
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1729318063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729318060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 165221a25168b4043b4eea0aa2b98c19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1928942133
 GameObject:
   m_ObjectHideFlags: 0
@@ -2587,9 +2600,9 @@ GameObject:
   - component: {fileID: 1931149064}
   - component: {fileID: 1931149063}
   - component: {fileID: 1931149062}
-  - component: {fileID: 1931149061}
   - component: {fileID: 1931149065}
   - component: {fileID: 1931149066}
+  - component: {fileID: 1931149067}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2597,21 +2610,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1931149061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1931149060}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 420b8d419b1ea0944b3432a1604acf8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocidad: 7
-  velocidadSalto: 18
-  CheckGroundTf: {fileID: 1578544106}
 --- !u!70 &1931149062
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2735,6 +2733,21 @@ MonoBehaviour:
   velocidadSalto: 18
   CheckGroundTf: {fileID: 1578544106}
   rigi: {fileID: 1931149065}
+--- !u!114 &1931149067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931149060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1a61240978c87747866fd8990dfa540, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vida: 100
+  maxVida: 100
+  barraDeVida: {fileID: 1729318063}
 --- !u!1 &1952302009
 GameObject:
   m_ObjectHideFlags: 0

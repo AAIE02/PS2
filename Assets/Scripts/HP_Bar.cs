@@ -5,20 +5,20 @@ using UnityEngine.UIElements;
 
 public class HP_Bar : MonoBehaviour
 {
-    private Slider Hp_Bar;
+    private Slider Hp_bar;
     private void Start()
     {
-        Hp_Bar = GetComponent<Slider>();
+        Hp_bar = GetComponent<Slider>();
     }
 
     public void ChangeValueMax(float HPTotal)
     {
-        //Hp_Bar.maxvalue = HPTotal;
+        Hp_bar.maxvalue = HPTotal;
     }
 
     public void ChangeCurrentHP(float cantidadHP)
     {
-        Hp_Bar.value = cantidadHP;
+        Hp_bar.value = cantidadHP;
     }
 
     public void BarraDeVida(float cantidadHP)
