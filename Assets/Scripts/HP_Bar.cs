@@ -27,6 +27,12 @@ public class HP_Bar : MonoBehaviour
         ChangeCurrentHP(cantidadHP);
     }
 }
+
+
 //Bug de lanzamiento 
 //Puntuacion
 //Vida de personaje
+/*-----------------------------------------------------------------------*/
+//Win condition
+//Lose condition
+//Subir a tienda
