@@ -10,7 +10,7 @@ public class Soul : MonoBehaviour
 
     public enum Type
     {
-        Coin
+        Soul
     }
 
     public Type type;
