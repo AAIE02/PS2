@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class HP_Bar : MonoBehaviour
 {
@@ -13,7 +13,7 @@ public class HP_Bar : MonoBehaviour
 
     public void ChangeValueMax(float HPTotal)
     {
-        Hp_bar.maxvalue = HPTotal;
+        Hp_bar.maxValue = HPTotal;
     }
 
     public void ChangeCurrentHP(float cantidadHP)
