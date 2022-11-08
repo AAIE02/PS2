@@ -1,24 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class HP_Bar : MonoBehaviour
 {
-    private Slider Hp_Bar;
+    private Slider Hp_bar;
     private void Start()
     {
-        Hp_Bar = GetComponent<Slider>();
+        Hp_bar = GetComponent<Slider>();
     }
 
     public void ChangeValueMax(float HPTotal)
     {
-        //Hp_Bar.maxvalue = HPTotal;
+        Hp_bar.maxValue = HPTotal;
     }
 
     public void ChangeCurrentHP(float cantidadHP)
     {
-        Hp_Bar.value = cantidadHP;
+        Hp_bar.value = cantidadHP;
     }
 
     public void BarraDeVida(float cantidadHP)
@@ -27,6 +27,12 @@ public class HP_Bar : MonoBehaviour
         ChangeCurrentHP(cantidadHP);
     }
 }
+
+
 //Bug de lanzamiento 
 //Puntuacion
 //Vida de personaje
+/*-----------------------------------------------------------------------*/
+//Win condition
+//Lose condition
+//Subir a tienda
