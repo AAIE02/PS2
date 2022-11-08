@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using System;
 
 public class Hp : MonoBehaviour
 {
     [SerializeField] private float vida;
     [SerializeField] private float maxVida;
     [SerializeField] private HP_Bar barraDeVida;
+    public event EventHandler PlayerDeath;
 
     void Start()
     {
@@ -21,6 +23,7 @@ public class Hp : MonoBehaviour
         barraDeVida.ChangeCurrentHP(vida);
         if(vida <= 0)
         {
+            PlayerDeath?.Invoke(this, EventArgs.Empty);
             Destroy(gameObject);
         }
     }
