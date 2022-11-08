@@ -2849,7 +2849,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1931149060}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16e7d9578e5ddc044b57ea4149e73db0, type: 3}
   m_Name: 
@@ -2871,7 +2871,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vida: 0
-  maxVida: 100
+  maxVida: 1
   barraDeVida: {fileID: 1729318063}
 --- !u!1 &1952302009
 GameObject:
