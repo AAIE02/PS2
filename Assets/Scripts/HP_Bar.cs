@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class HP_Bar : MonoBehaviour
 {
     private Slider Hp_bar;
+
     private void Start()
     {
         Hp_bar = GetComponent<Slider>();
