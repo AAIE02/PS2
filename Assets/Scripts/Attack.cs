@@ -18,8 +18,7 @@ public class Attack : MonoBehaviour
     void Update()
     {
         if(CrossPlatformInputManager.GetButtonDown("Hit")  && EsperaDeGolpe)
-        {
-                                                    //&& PlayerMovement.CheckGroundTf
+        {                                   //&& PlayerMovement.CheckGroundTf
             anim.SetTrigger("Ataca");
         }
     }
