@@ -28,7 +28,7 @@ public class Soul : MonoBehaviour
         GameManager.Instance.AddSoul();
         GameManager.Instance.AddSacredSoul();
         //SoundManager.Instance.PlaySound(Coin);
-        UIManager.instance.ChangeScore(SoulValue);
+        UIManager.Instance.ChangeScore(SoulValue);
         Destroy(gameObject);
     }
 }

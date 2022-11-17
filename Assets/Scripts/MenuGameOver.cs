@@ -7,6 +7,18 @@ using System;
 public class MenuGameOver : MonoBehaviour
 {
     [SerializeField] private GameObject menuGameOver;
+    private Hp hp;
+
+    private void Start()
+    {
+        hp = GameObject.FindGameObjectWithTag("Player").GetComponent<Hp>();
+        hp.PlayerDeath += ActivateMenu;
+    }
+
+    private void ActivateMenu(object sender, EventArgs e)
+    {
+        menuGameOver.SetActive(true);
+    }
     public void Retry()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

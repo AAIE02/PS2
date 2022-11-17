@@ -31,9 +31,12 @@ public class HP_Bar : MonoBehaviour
 
 
 //Bug de lanzamiento 
-//Puntuacion
-//Vida de personaje
 /*-----------------------------------------------------------------------*/
-//Win condition
-//Lose condition
+//Puntuacion--Monedas
+//Vida de personaje--recibir damage de enmigos y obstaculos
+/*-----------------------------------------------------------------------*/
+//MainMenu
+//Win condition-- MENU
+//Lose condition-- MENU
+/*-----------------------------------------------------------------------*/
 //Subir a tienda

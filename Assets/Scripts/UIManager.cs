@@ -6,21 +6,21 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-    public static UIManager instance { get; private set; }
+    public static UIManager Instance;
     public TextMeshProUGUI text;
-    int soul;
+    int Score;
 
 
     private void Start()
     {
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
         }
     }
     public void ChangeScore(int soulValue)
     {
-        soul += soulValue;
-        text.text = "X" + soul.ToString();
+        Score += soulValue;
+        text.text = "X" + Score.ToString();
     }
 }

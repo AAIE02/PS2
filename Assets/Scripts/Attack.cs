@@ -17,21 +17,23 @@ public class Attack : MonoBehaviour
 
     void Update()
     {
-        if(CrossPlatformInputManager.GetButtonDown("Hit")  && EsperaDeGolpe)
-        {                                   //&& PlayerMovement.CheckGroundTf
+        if(CrossPlatformInputManager.GetButtonDown("Hit") && EsperaDeGolpe)
+        {                                   //&& mo.CheckGroundTf, MobileControl.CheckGroundTf
             anim.SetTrigger("Ataca");
         }
     }
 
     public void Ataca()
     {
-        PlayerMovement.CanMove = false;
+        //PlayerMovement.CanMove = false;
+        MobileControl.CanMove = false;
         AtaqueCollider.SetActive(true);
         EsperaDeGolpe=false;
     }
     public void DejaDeAtacar()
     {
-        PlayerMovement.CanMove = true;
+        //PlayerMovement.CanMove = true;
+        MobileControl.CanMove = true;
         AtaqueCollider.SetActive(false);
         EsperaDeGolpe = true;
     }
