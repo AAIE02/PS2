@@ -6,6 +6,7 @@ using System;
 
 public class MenuGameOver : MonoBehaviour
 {
+    public  MenuGameOver Instance;
     [SerializeField] private GameObject menuGameOver;
     private Hp hp;
 
@@ -15,10 +16,11 @@ public class MenuGameOver : MonoBehaviour
         hp.PlayerDeath += ActivateMenu;
     }
 
-    private void ActivateMenu(object sender, EventArgs e)
+    public void ActivateMenu(object sender, EventArgs e)
     {
         menuGameOver.SetActive(true);
     }
+
     public void Retry()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

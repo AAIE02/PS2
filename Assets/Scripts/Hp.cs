@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 using System;
+using UnityEngine.SceneManagement;
 
 public class Hp : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class Hp : MonoBehaviour
         barraDeVida.ChangeCurrentHP(vida);
         if(vida <= 0)
         {
+            SceneManager.LoadScene("GameOver");
             PlayerDeath?.Invoke(this, EventArgs.Empty);
             Destroy(gameObject);
         }

@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        Application.targetFrameRate = 60;
+        Application.targetFrameRate = 30;
         NewGame();
     }
 
@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        // TODO: show game over screen
+
         SceneManager.LoadScene("GameOver");
         NewGame();
     }
@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void ResetLevel()        //Reinicia el nivel
-    {
+    {        
         Souls--;
 
         if (Souls > 0)
@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
             GameOver();
         }
     }
-
+       
     public void AddSoul()   //Agrega Monedas
     {
         Souls++;
