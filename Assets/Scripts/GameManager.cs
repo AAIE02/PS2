@@ -91,6 +91,7 @@ public class GameManager : MonoBehaviour
             Souls = 0;
             AddSacredSoul();
         }
+        Debug.Log("Agarraste una moneda");
     }
 
     public void AddSacredSoul() //agrega 1 vida al player

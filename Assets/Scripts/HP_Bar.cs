@@ -28,15 +28,3 @@ public class HP_Bar : MonoBehaviour
         ChangeCurrentHP(cantidadHP);
     }
 }
-
-
-//Bug de lanzamiento 
-/*-----------------------------------------------------------------------*/
-//Puntuacion--Monedas
-//Vida de personaje--recibir damage de enmigos y obstaculos
-/*-----------------------------------------------------------------------*/
-//MainMenu
-//Win condition-- MENU
-//Lose condition-- MENU
-/*-----------------------------------------------------------------------*/
-//Subir a tienda
