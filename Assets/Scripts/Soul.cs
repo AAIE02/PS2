@@ -3,32 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Soul : MonoBehaviour
+public class Soul : CollectableObjects
 {
-    public int SoulValue = 1;
-    //[SerializeField] private AudioClip Coin;
+    [SerializeField] private int SoulValue = 1;
 
-    public enum Type
+
+    protected override void Collect()
     {
-        Soul
-    }
-
-    public Type type;
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            Collect(other.gameObject);
-        }
-    }
-
-    private void Collect(GameObject other)
-    {
-        GameManager.Instance.AddSoul();
-        GameManager.Instance.AddSacredSoul();
-        //SoundManager.Instance.PlaySound(Coin);
-        UIManager.Instance.ChangeScore(SoulValue);
+        GameManager.Instance.AddSoul(SoulValue);
         Destroy(gameObject);
     }
 }

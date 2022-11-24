@@ -6,24 +6,47 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-    public static UIManager Instance;
-    public TextMeshProUGUI text;
+    private static UIManager Instance;
+    public static UIManager MyInstance
+    {
+        get
+        {
+            if (Instance == null)
+                Instance = new UIManager();
+            return Instance;
+        }
+    }
+
+    [SerializeField] TextMeshProUGUI txtSouls, txtVictoryCondition;
+    [SerializeField] GameObject victoryCondition;
+
     int Score;
-    //int WinCondition;
+    int WinCondition;
 
-
-    private void Start()
+    private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
         }
+        else
+        {
+           DestroyImmediate(this);
+        }
     }
-    //public void ChangeScore(int soulValue, int winCondition)
-    public void ChangeScore(int soulValue)
+
+    public void SoulUI(int _soulValue, int _winCondition)
     {
-        //WinCondition += winCondition;
-        Score += soulValue;
-        text.text = "X" + Score.ToString();
+        txtSouls.text = "Souls: " + _soulValue + " / " + _winCondition;
+    }
+
+    public void ShowWinCondition(int _soulValue, int _winCondition)
+    {
+        victoryCondition.SetActive(true);
+        txtVictoryCondition.text = "You need " + (_winCondition - _soulValue) + " more souls";
+    }
+    public void HideWinCondition()
+    {
+        victoryCondition.SetActive(false);
     }
 }

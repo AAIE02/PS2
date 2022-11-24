@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public int world { get; private set; }
     public int stage { get; private set; }
 
+    private int colledtedSouls, victoryCondition = 5;
     private void Awake()
     {
         if (Instance != null)
@@ -33,8 +34,10 @@ public class GameManager : MonoBehaviour
             Instance = null;
         }
     }
+
     private void Start()
     {
+        UIManager.MyInstance.SoulUI(colledtedSouls, victoryCondition);
         Application.targetFrameRate = 30;
         NewGame();
     }
@@ -50,7 +53,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
 
-        SceneManager.LoadScene("GameOver");
+        //SceneManager.LoadScene("GameOver");
         NewGame();
     }
 
@@ -82,20 +85,27 @@ public class GameManager : MonoBehaviour
         }
     }
        
-    public void AddSoul()   //Agrega Monedas
+    public void AddSoul(int _souls)   //Agrega Monedas
     {
-        Souls++;
-
-        if (Souls == 100)
-        {
-            Souls = 0;
-            AddSacredSoul();
-        }
-        Debug.Log("Agarraste una moneda");
+        colledtedSouls += _souls;
+        UIManager.MyInstance.SoulUI(colledtedSouls, victoryCondition);
+        //Debug.Log("Agarraste una moneda");
     }
 
     public void AddSacredSoul() //agrega 1 vida al player
     {
         SacredSoul++;
+    }
+
+    public void Finish()
+    {
+        if (colledtedSouls >= victoryCondition)
+        {
+            SceneManager.LoadScene($"{world}-{stage}");
+        }
+        else
+        {
+            UIManager.MyInstance.ShowWinCondition(colledtedSouls, victoryCondition);
+        }
     }
 }
