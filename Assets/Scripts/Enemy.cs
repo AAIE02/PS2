@@ -29,7 +29,6 @@ public class Enemy : MonoBehaviour
             VidaActualDelEnemigo -= HitDamage;
             Debug.Log(VidaActualDelEnemigo); 
         }
-
         /*if (collision.gameObject.CompareTag("AtaqueJugador"))
         {
             var direction = Random.Range(-1000, 1000);
