@@ -9,7 +9,6 @@ public class Enemy : MonoBehaviour
     [SerializeField] public float HitDamage;
     [SerializeField] public float Vida;
     [SerializeField] float VidaActualDelEnemigo;
-    [SerializeField] private Vector2 velocidaRebote;
     void Start()
     {
         VidaActualDelEnemigo = Vida;
@@ -22,18 +21,6 @@ public class Enemy : MonoBehaviour
         {
             Destroy(gameObject,2);
         }
-    }
-
-    public void Rebote(Vector2 puntodeGolpe)
-    {
-        rb2d.velocity = new Vector2(-velocidaRebote.x * puntodeGolpe.x, velocidaRebote.y);
-    }
-
-    public void TakeDamage(float damage, Vector2 posicion)
-    {
-        Vida -= HitDamage;
-        Rebote(posicion);
-        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
