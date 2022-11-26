@@ -5,8 +5,8 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class MobileControl : MonoBehaviour
 {
-    public float velocidad;
-    public float velocidadSalto;
+    [SerializeField] private float velocidad;
+    [SerializeField] private float velocidadSalto;
     public static bool CanMove;
 
     public Transform CheckGroundTf;

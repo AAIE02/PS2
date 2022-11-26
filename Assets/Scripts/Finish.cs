@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,7 @@ public class Finish : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-          GameManager.Instance.Finish();
+            GameManager.Instance.Finish();
         }
     }
 

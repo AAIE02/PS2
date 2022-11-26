@@ -6,7 +6,6 @@ using System;
 
 public class MenuGameOver : MonoBehaviour
 {
-    public  MenuGameOver Instance;
     [SerializeField] private GameObject menuGameOver;
     private Hp hp;
 
@@ -31,9 +30,9 @@ public class MenuGameOver : MonoBehaviour
         SceneManager.LoadScene(name);
     }
 
-    /*public void Exit()
+    public void Exit()
     {
         UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
-    }*/
+    }
 }

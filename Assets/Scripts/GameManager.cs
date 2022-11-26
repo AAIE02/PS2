@@ -2,18 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using UnityEngine;
+using System;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    public int Souls { get; private set; }      //Monedas
+    public int Souls { get; private set; }      //Puntos
     public int SacredSoul { get; private set; }  //Vidas
-    public int world { get; private set; }
+    public int world { get; private set; } 
     public int stage { get; private set; }
 
+    public event EventHandler PlayerWins;
     private int colledtedSouls, victoryCondition = 5;
+
     private void Awake()
     {
         if (Instance != null)
@@ -38,7 +41,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         UIManager.MyInstance.SoulUI(colledtedSouls, victoryCondition);
-        Application.targetFrameRate = 30;
+        Application.targetFrameRate = 60;
         NewGame();
     }
 
@@ -89,7 +92,6 @@ public class GameManager : MonoBehaviour
     {
         colledtedSouls += _souls;
         UIManager.MyInstance.SoulUI(colledtedSouls, victoryCondition);
-        //Debug.Log("Agarraste una moneda");
     }
 
     public void AddSacredSoul() //agrega 1 vida al player
@@ -101,7 +103,8 @@ public class GameManager : MonoBehaviour
     {
         if (colledtedSouls >= victoryCondition)
         {
-            SceneManager.LoadScene($"{world}-{stage}");
+            PlayerWins?.Invoke(this, EventArgs.Empty);
+            SceneManager.LoadScene("1-2");
         }
         else
         {

@@ -10,6 +10,7 @@ TagManager:
   - EnemyAttackCollider
   - Tramps
   - Acantilado
+  - GameManager
   layers:
   - Default
   - TransparentFX
