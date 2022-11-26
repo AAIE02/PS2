@@ -30,9 +30,9 @@ public class MenuGameOver : MonoBehaviour
         SceneManager.LoadScene(name);
     }
 
-    public void Exit()
+    /*public void Exit()
     {
         UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
-    }
+    }*/
 }
