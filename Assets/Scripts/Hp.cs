@@ -11,9 +11,13 @@ public class Hp : MonoBehaviour
     [SerializeField] private float maxVida;
     [SerializeField] private HP_Bar barraDeVida;
     public event EventHandler PlayerDeath;
+    Animator animator;
+    int ah_death = Animator.StringToHash("IsDeath");
+
 
     void Start()
     {
+        animator = GetComponent<Animator>();
         vida = maxVida;
         barraDeVida.BarraDeVida(vida);
     }
@@ -25,6 +29,7 @@ public class Hp : MonoBehaviour
         if(vida <= 0)
         {
             PlayerDeath?.Invoke(this, EventArgs.Empty);
+            animator.SetTrigger(ah_death);
             Destroy(gameObject);
         }
     }
