@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     Rigidbody2D rb2d;
     [SerializeField] public float HitDamage;
     [SerializeField] public float Vida;
-    [SerializeField] float VidaActualDelEnemigo;
+    float VidaActualDelEnemigo;
     void Start()
     {
         VidaActualDelEnemigo = Vida;

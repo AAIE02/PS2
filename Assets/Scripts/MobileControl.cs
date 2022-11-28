@@ -9,6 +9,7 @@ public class MobileControl : MonoBehaviour
     [SerializeField] private float velocidad;
     [SerializeField] private float velocidadSalto;
     public bool canMove;
+    public bool canAttack;
     [SerializeField] public Transform CheckGroundTf;
     [SerializeField] public Rigidbody2D rigi;
 
@@ -30,6 +31,7 @@ public class MobileControl : MonoBehaviour
 
     void Start()
     {
+        canAttack = false;
         canMove = true;
         rigi = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -53,7 +55,7 @@ public class MobileControl : MonoBehaviour
                     moveToRigi.y = velocidadSalto;
                 }
             }
-            if (CrossPlatformInputManager.GetButton("Hit")) //&& mo.CheckGroundTf, MobileControl.CheckGroundTf
+            if (CrossPlatformInputManager.GetButton("Hit") && CheckGroundTf && canAttack)
             {
                 animator.SetTrigger(ah_heavyattack);
                 Debug.Log("Diste un golpe");
@@ -102,12 +104,14 @@ public class MobileControl : MonoBehaviour
     }
     public void Ataca()
     {
-        canMove = true;
-        attackCol.SetActive(false);
+        canMove = false;
+        attackCol.SetActive(true);
+        canAttack = false;
     }
     public void DejaDeAtacar()
     {
-        canMove = false;
-        attackCol.SetActive(true);
+        canMove = true;
+        attackCol.SetActive(false);
+        canAttack = true;
     }
 }
