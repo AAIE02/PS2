@@ -30,7 +30,7 @@ public class MobileControl : MonoBehaviour
 
     [Header("Attack")]
     public GameObject attackCol;
-    private bool canAttack = true;
+    //private bool canAttack = true;
 
     void Start()
     {
@@ -56,6 +56,10 @@ public class MobileControl : MonoBehaviour
                     moveToRigi.y = velocidadSalto;
                 }
             }
+            if (CrossPlatformInputManager.GetButton("Hit")) //&& canAttack
+            {
+                animator.SetTrigger(ah_attack);
+            }
             rigi.velocity = moveToRigi;
             FlipControl(h);
         }
@@ -67,11 +71,6 @@ public class MobileControl : MonoBehaviour
         if (CrossPlatformInputManager.GetButton("SpinJump"))
         {
             animator.SetTrigger(ah_spinJump);
-        }
-
-        if (CrossPlatformInputManager.GetButton("Hit") && canAttack)
-        {
-            animator.SetTrigger(ah_attack);
         }
     }
 
@@ -104,14 +103,14 @@ public class MobileControl : MonoBehaviour
 
     public void Ataca()
     {
-        canMove = false;
-        attackCol.SetActive(true);
-        canAttack = false;
+        canMove = true;
+        attackCol.SetActive(false);
+        //canAttack = false;
     }
     public void DejaDeAtacar()
     {
-        canMove = true;
-        attackCol.SetActive(false);
-        canAttack = true;
+        canMove = false;
+        attackCol.SetActive(true);
+        //canAttack = true;
     }
 }

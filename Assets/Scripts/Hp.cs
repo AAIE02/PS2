@@ -28,9 +28,9 @@ public class Hp : MonoBehaviour
         barraDeVida.ChangeCurrentHP(vida);
         if(vida <= 0)
         {
-            PlayerDeath?.Invoke(this, EventArgs.Empty);
             animator.SetTrigger(ah_death);
-            Destroy(gameObject);
+            PlayerDeath?.Invoke(this, EventArgs.Empty);
+            Destroy(gameObject, 1);
         }
     }
 

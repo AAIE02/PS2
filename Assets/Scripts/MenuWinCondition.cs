@@ -9,7 +9,7 @@ public class MenuWinCondition : MonoBehaviour
     [SerializeField] private GameObject menuWinCondition;
     private GameManager GM;
     private bool GameHasEnded = false;
-    public float Delay = 10f;
+    public float Delay = 3f;
 
     private void Start()
     {
