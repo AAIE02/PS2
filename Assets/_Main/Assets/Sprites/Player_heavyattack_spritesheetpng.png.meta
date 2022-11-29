@@ -112,113 +112,17 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Heavyattack0
+      name: CatzinAttack0
       rect:
         serializedVersion: 2
-        x: 18
-        y: 2
-        width: 47
-        height: 39
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 01a4681bb746e2e4e81e66b0264278c8
-      internalID: -710947889
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Heavyattack1
-      rect:
-        serializedVersion: 2
-        x: 137
-        y: 2
-        width: 28
-        height: 48
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d0d2410e81b923545af73b7fe4b3f02a
-      internalID: -659108554
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Heavyattack2
-      rect:
-        serializedVersion: 2
-        x: 234
-        y: 1
-        width: 58
-        height: 38
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7757472dfa3302d498c862bf1abb7515
-      internalID: -826021224
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Heavyattack3
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 7
-        width: 60
-        height: 45
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f1114a5aed25aba48893835d82945fd8
-      internalID: -11640251
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Heavyattack4
-      rect:
-        serializedVersion: 2
-        x: 333
+        x: 0
         y: 0
-        width: 59
-        height: 48
+        width: 100
+        height: 55
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,41 +130,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac06a8f63de376f41a5a7bae506918c4
-      internalID: 535048265
+      spriteID: a475a7ba0980b1a42b26a64197a78144
+      internalID: 1711935425
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Heavyattack5
+      name: CatzinAttack1
       rect:
         serializedVersion: 2
-        x: 386
-        y: 5
-        width: 14
-        height: 38
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 37bbf94038e233647a4a802e579c6b03
-      internalID: -1927789070
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Heavyattack6
-      rect:
-        serializedVersion: 2
-        x: 434
+        x: 100
         y: 0
-        width: 67
-        height: 38
+        width: 100
+        height: 55
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,41 +151,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62de1cf802218374eb84fe6370fed34f
-      internalID: 1560532271
+      spriteID: 6fe3f3d0bbe44244ba6be3fd2958733c
+      internalID: -160474960
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_heavyattack_spritesheetpng_7
+      name: CatzinAttack2
       rect:
         serializedVersion: 2
-        x: 494
-        y: 7
-        width: 4
-        height: 4
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d94cb77fcae3e3e4baadaa0158c6766d
-      internalID: 1399945271
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Heavyattack7
-      rect:
-        serializedVersion: 2
-        x: 533
+        x: 200
         y: 0
-        width: 59
-        height: 38
+        width: 100
+        height: 55
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -310,20 +172,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd9b163239b756b40ae2062ee439ff7d
-      internalID: 60866516
+      spriteID: a524d7f4f38ddff4a91fec977d3ceafe
+      internalID: -1306507040
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Heavyattack8
+      name: CatzinAttack3
       rect:
         serializedVersion: 2
-        x: 640
-        y: 2
-        width: 31
-        height: 40
+        x: 300
+        y: 0
+        width: 100
+        height: 55
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -331,20 +193,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d04f48a841adb0f49a9daa930fa66c02
-      internalID: -1054507648
+      spriteID: b1b77da2f8af1f840a4b7946f422c6c5
+      internalID: -285108033
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Heavyattack9
+      name: CatzinAttack4
       rect:
         serializedVersion: 2
-        x: 716
-        y: 2
-        width: 46
-        height: 42
+        x: 400
+        y: 0
+        width: 100
+        height: 55
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -352,8 +214,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 386bba05f2db58d4a86ebbbd360e7510
-      internalID: 2041437209
+      spriteID: 1a67c0caec6a8df44ab8f98e7c1d6a72
+      internalID: -198599040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CatzinAttack5
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 0
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddceac3b9ddf01d499468b946059c537
+      internalID: 423896995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CatzinAttack6
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a566f47f8632bcd4aad84ee8b015a14e
+      internalID: -1659417549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CatzinAttack7
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 0
+        width: 100
+        height: 55
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1613837d3befda4db46c60d8feeb0a6
+      internalID: 1255765091
       vertices: []
       indices: 
       edges: []
@@ -369,17 +294,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Player_heavyattack_spritesheetpng_7: 1399945271
-      Heavyattack8: -1054507648
-      Heavyattack7: 60866516
-      Heavyattack4: 535048265
-      Heavyattack9: 2041437209
-      Heavyattack5: -1927789070
-      Heavyattack2: -826021224
-      Heavyattack6: 1560532271
-      Heavyattack1: -659108554
-      Heavyattack3: -11640251
-      Heavyattack0: -710947889
+      CatzinAttack5: 423896995
+      CatzinAttack2: -1306507040
+      CatzinAttack7: 1255765091
+      CatzinAttack3: -285108033
+      CatzinAttack6: -1659417549
+      CatzinAttack4: -198599040
+      CatzinAttack1: -160474960
+      CatzinAttack0: 1711935425
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

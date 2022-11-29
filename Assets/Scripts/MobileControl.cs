@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.U2D.Path.GUIFramework;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
@@ -8,19 +9,17 @@ public class MobileControl : MonoBehaviour
     [Header("Jump-Movement")]
     [SerializeField] private float velocidad;
     [SerializeField] private float velocidadSalto;
-    public bool canMove;
-    public bool canAttack;
     [SerializeField] public Transform CheckGroundTf;
     [SerializeField] public Rigidbody2D rigi;
+    public bool canMove = true;
 
     [Header("Animation")]
     private int ah_velocidad = Animator.StringToHash("Velocidad");
-    private int ah_heavyattack = Animator.StringToHash("HeavyAttack");
+    private int ah_attack = Animator.StringToHash("IsAttacking");
     private int ah_jump = Animator.StringToHash("IsGrounded");
     private int ah_slide = Animator.StringToHash("IsSliding");
     private int ah_spinJump = Animator.StringToHash("IsSpinJump");
     private Animator animator;
-    public GameObject attackCol;
 
     [Header("Slide")]
     [SerializeField] private float slideVelocity;
@@ -29,10 +28,12 @@ public class MobileControl : MonoBehaviour
     private float initialGravity;
     private bool canSlide = true;
 
+    [Header("Attack")]
+    public GameObject attackCol;
+    private bool canAttack = true;
+
     void Start()
     {
-        canAttack = false;
-        canMove = true;
         rigi = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         initialGravity = rigi.gravityScale;
@@ -55,28 +56,26 @@ public class MobileControl : MonoBehaviour
                     moveToRigi.y = velocidadSalto;
                 }
             }
-            if (CrossPlatformInputManager.GetButton("Hit") && CheckGroundTf && canAttack)
-            {
-                animator.SetTrigger(ah_heavyattack);
-                Debug.Log("Diste un golpe");
-            }
             rigi.velocity = moveToRigi;
             FlipControl(h);
         }
         if (CrossPlatformInputManager.GetButton("Slide") && canSlide)
         {
-            StartCoroutine(Dash());
-            Debug.Log("Te deslizaste");
+            StartCoroutine(Slide());
         }
 
         if (CrossPlatformInputManager.GetButton("SpinJump"))
         {
             animator.SetTrigger(ah_spinJump);
-            Debug.Log("Rodaste");
+        }
+
+        if (CrossPlatformInputManager.GetButton("Hit") && canAttack)
+        {
+            animator.SetTrigger(ah_attack);
         }
     }
 
-    private IEnumerator Dash()
+    private IEnumerator Slide()
     {
         canMove = false;
         canSlide = false;
@@ -102,6 +101,7 @@ public class MobileControl : MonoBehaviour
         }
         transform.localScale = escalaActual;
     }
+
     public void Ataca()
     {
         canMove = false;

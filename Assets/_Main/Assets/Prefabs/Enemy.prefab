@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 2345472616439565183}
   - component: {fileID: 2345472616439565153}
   - component: {fileID: 2345472616439565154}
-  - component: {fileID: 2345472616439565155}
+  - component: {fileID: 1939268338870929307}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -219,7 +219,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &2345472616439565155
+--- !u!114 &1939268338870929307
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -233,5 +233,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HitDamage: 1
   Vida: 1
-  VidaActualDelEnemigo: 0
-  velocidaRebote: {x: 0, y: 0}

@@ -13,7 +13,6 @@ public class MenuWinCondition : MonoBehaviour
 
     private void Start()
     {
-        //GM = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         GM = GameObject.Find("gameManager").GetComponent<GameManager>();
         GM.PlayerWins += ActivateMenu;
         Debug.Log(menuWinCondition, menuWinCondition);
