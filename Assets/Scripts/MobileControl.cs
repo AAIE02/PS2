@@ -10,7 +10,7 @@ public class MobileControl : MonoBehaviour
     [SerializeField] private float velocidad;
     [SerializeField] private float velocidadSalto;
     [SerializeField] public Transform CheckGroundTf;
-    [SerializeField] public Rigidbody2D rigi;
+    private Rigidbody2D rigi;
     public bool canMove = true;
 
     [Header("Animation")]
@@ -20,6 +20,7 @@ public class MobileControl : MonoBehaviour
     private int ah_slide = Animator.StringToHash("IsSliding");
     private int ah_spinJump = Animator.StringToHash("IsSpinJump");
     private Animator animator;
+    [SerializeField] private ParticleSystem particles;
 
     [Header("Slide")]
     [SerializeField] private float slideVelocity;
@@ -27,6 +28,9 @@ public class MobileControl : MonoBehaviour
     [SerializeField] private TrailRenderer tracking;
     private float initialGravity;
     private bool canSlide = true;
+
+    [Header("SpinJump")]
+
 
     [Header("Attack")]
     public GameObject attackCol;
@@ -49,6 +53,7 @@ public class MobileControl : MonoBehaviour
 
             if (CrossPlatformInputManager.GetButtonDown("Jump"))
             {
+                particles.Play();
                 animator.SetTrigger(ah_jump);
                 Collider2D col = Physics2D.OverlapCircle(CheckGroundTf.position, 0.1f);
                 if (col)
@@ -91,12 +96,13 @@ public class MobileControl : MonoBehaviour
         tracking.emitting = false;
     }
     
-    void FlipControl(float h)
+    private void FlipControl(float h)
     {
         Vector3 escalaActual = transform.localScale;
         if (h != 0)
         {
             escalaActual.x = h > 0f ? 1f : -1f;
+            particles.Play();
         }
         transform.localScale = escalaActual;
     }

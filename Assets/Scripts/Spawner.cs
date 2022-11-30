@@ -7,15 +7,15 @@ public class Spawner : MonoBehaviour
     public GameObject[] enemigos;
 
 
-    public float TimeSpawn = 1;
-    public float RepeatSpawnTime = 5;
+    [SerializeField] private float TimeSpawn = 1;
+    [SerializeField] private float RepeatSpawnTime = 5;
 
 
 
-    public Transform XRangeLeft;
-    public Transform XRangeRight;
-    public Transform YRangeUp;
-    public Transform YRangeDown;
+    [SerializeField] private Transform XRangeLeft;
+    [SerializeField] private Transform XRangeRight;
+    [SerializeField] private Transform YRangeUp;
+    [SerializeField] private Transform YRangeDown;
 
     
     void Start()

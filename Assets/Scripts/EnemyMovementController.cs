@@ -20,7 +20,6 @@ public class EnemyMovementController : MonoBehaviour
     {
         RaycastHit2D infoPlataform = Physics2D.Raycast(controladorDePlataforma.position, Vector2.down, distance);
         rigi.velocity = new Vector2(velocity, rigi.velocity.y);
-
         if (infoPlataform == false)
         {
             FlipControlEnemy();

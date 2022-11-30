@@ -13,6 +13,7 @@ public class Tramps : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
+            CineMachineCamara.Instance.MoveCamera(5, 5, 0.3f);
             timeNextDamage -= Time.deltaTime;
             if(timeNextDamage <= 0)
             {

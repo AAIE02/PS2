@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 public class MenuWinCondition : MonoBehaviour
 {
     [SerializeField] private GameObject menuWinCondition;
+    [SerializeField] private bool GameHasEnded = false;
     private GameManager GM;
-    private bool GameHasEnded = false;
     public float Delay = 3f;
 
     private void Start()

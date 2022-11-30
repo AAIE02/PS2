@@ -11,17 +11,14 @@ public class HP_Bar : MonoBehaviour
     {
         Hp_bar = GetComponent<Slider>();
     }
-
     public void ChangeValueMax(float HPTotal)
     {
         Hp_bar.maxValue = HPTotal;
     }
-
     public void ChangeCurrentHP(float cantidadHP)
     {
         Hp_bar.value = cantidadHP;
     }
-
     public void BarraDeVida(float cantidadHP)
     {
         ChangeValueMax(cantidadHP);

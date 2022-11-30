@@ -14,10 +14,6 @@ public class CollectableObjects : MonoBehaviour
 
     protected virtual void Collect()
     {
-        //GameManager.Instance.AddSoul();
-        //GameManager.Instance.AddSacredSoul();
-        //SoundManager.Instance.PlaySound(Coin);
-        //UIManager.Instance.ChangeScore(SoulValue);
-        //Destroy(gameObject);
+        
     }
 }

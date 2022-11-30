@@ -30,7 +30,7 @@ public class Hp : MonoBehaviour
         {
             animator.SetTrigger(ah_death);
             PlayerDeath?.Invoke(this, EventArgs.Empty);
-            Destroy(gameObject, 1);
+            Destroy(gameObject, 0.9f);
         }
     }
 

@@ -6,6 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
+    [SerializeField] TextMeshProUGUI txtSouls, txtVictoryCondition;
+    [SerializeField] GameObject victoryCondition;
+    [SerializeField] private int Score;
+    [SerializeField] private int WinCondition;
+
     private static UIManager Instance;
     public static UIManager MyInstance
     {
@@ -16,12 +21,6 @@ public class UIManager : MonoBehaviour
             return Instance;
         }
     }
-
-    [SerializeField] TextMeshProUGUI txtSouls, txtVictoryCondition;
-    [SerializeField] GameObject victoryCondition;
-
-    int Score;
-    int WinCondition;
 
     private void Awake()
     {

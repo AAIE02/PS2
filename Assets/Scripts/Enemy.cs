@@ -5,8 +5,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     Rigidbody2D rb2d;
-    [SerializeField] public float HitDamage;
-    [SerializeField] public float Vida;
+    [SerializeField] private float HitDamage;
+    [SerializeField] private float Vida;
     float VidaActualDelEnemigo;
     void Start()
     {
@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
     {
         if(VidaActualDelEnemigo <= 0)
         {
-            Destroy(gameObject,2);
+            Destroy(gameObject,1.5f);
         }
     }
 
