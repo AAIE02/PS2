@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Drawing;
 using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
@@ -59,7 +56,6 @@ public class GameManager : MonoBehaviour
         //SceneManager.LoadScene("GameOver");
         NewGame();
     }
-
 
     public void LoadLevel(int world, int stage)
     {

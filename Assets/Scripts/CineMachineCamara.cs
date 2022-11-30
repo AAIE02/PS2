@@ -1,16 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
 public class CineMachineCamara : MonoBehaviour
 {
     public static CineMachineCamara Instance;
-    private CinemachineVirtualCamera _cinemachineVirtualCamera;
-    private CinemachineBasicMultiChannelPerlin _cinemachineBasicMultichannelPerlin;
-    private float timeMovement;
-    private float initialMovementTime;
-    private float initialIntencity;
+    [SerializeField] private CinemachineVirtualCamera _cinemachineVirtualCamera;
+    [SerializeField] private CinemachineBasicMultiChannelPerlin _cinemachineBasicMultichannelPerlin;
+    [SerializeField] private float timeMovement;
+    [SerializeField] private float initialMovementTime;
+    [SerializeField] private float initialIntencity;
 
     private void Awake()
     {

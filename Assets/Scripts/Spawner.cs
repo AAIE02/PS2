@@ -1,28 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject[] enemigos;
-
-
+    [SerializeField] private GameObject[] enemigos;
     [SerializeField] private float TimeSpawn = 1;
     [SerializeField] private float RepeatSpawnTime = 5;
-
-
-
     [SerializeField] private Transform XRangeLeft;
     [SerializeField] private Transform XRangeRight;
     [SerializeField] private Transform YRangeUp;
     [SerializeField] private Transform YRangeDown;
-
-    
     void Start()
     {
         InvokeRepeating("SpawnEnemies", TimeSpawn,RepeatSpawnTime);
     }
-
 
     public void SpawnEnemies()
     {

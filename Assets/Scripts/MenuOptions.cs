@@ -5,11 +5,11 @@ using UnityEngine.Audio;
 
 public class MenuOptions : MonoBehaviour
 {
-    [SerializeField] private AudioMixer audioMixer;
+    [SerializeField] private AudioMixer _audioMixer;
 
     public void ChangeVolume(float volumen)
     {
-        audioMixer.SetFloat("Volumen", volumen);
+        _audioMixer.SetFloat("Volumen", volumen);
     }
 
     public void ChangeQuality(int index)

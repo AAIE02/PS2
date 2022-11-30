@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.U2D.Path.GUIFramework;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
@@ -9,37 +7,36 @@ public class MobileControl : MonoBehaviour
     [Header("Jump-Movement")]
     [SerializeField] private float velocidad;
     [SerializeField] private float velocidadSalto;
-    [SerializeField] public Transform CheckGroundTf;
+    [SerializeField] private Transform CheckGroundTf;
     private Rigidbody2D rigi;
-    public bool canMove = true;
+    [SerializeField] private bool canMove = true;
 
     [Header("Animation")]
-    private int ah_velocidad = Animator.StringToHash("Velocidad");
-    private int ah_attack = Animator.StringToHash("IsAttacking");
-    private int ah_jump = Animator.StringToHash("IsGrounded");
-    private int ah_slide = Animator.StringToHash("IsSliding");
-    private int ah_spinJump = Animator.StringToHash("IsSpinJump");
-    private Animator animator;
+    [SerializeField] private int ah_velocidad = Animator.StringToHash("Velocidad");
+    [SerializeField] private int ah_attack = Animator.StringToHash("IsAttacking");
+    [SerializeField] private int ah_jump = Animator.StringToHash("IsGrounded");
+    [SerializeField] private int ah_slide = Animator.StringToHash("IsSliding");
+    [SerializeField] private int ah_spinJump = Animator.StringToHash("IsSpinJump");
+    [SerializeField] private Animator _animator;
     [SerializeField] private ParticleSystem particles;
 
     [Header("Slide")]
     [SerializeField] private float slideVelocity;
     [SerializeField] private float slideTime;
     [SerializeField] private TrailRenderer tracking;
-    private float initialGravity;
-    private bool canSlide = true;
+    [SerializeField] private float initialGravity;
+    [SerializeField] private bool canSlide = true;
 
     [Header("SpinJump")]
 
 
     [Header("Attack")]
     public GameObject attackCol;
-    //private bool canAttack = true;
 
     void Start()
     {
         rigi = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
         initialGravity = rigi.gravityScale;
     }
 
@@ -49,12 +46,12 @@ public class MobileControl : MonoBehaviour
         {
             float h = CrossPlatformInputManager.GetAxis("Horizontal");
             Vector2 moveToRigi = new Vector2(h * velocidad, rigi.velocity.y);
-            animator.SetInteger(ah_velocidad, Mathf.FloorToInt(Mathf.Abs(h)));
+            _animator.SetInteger(ah_velocidad, Mathf.FloorToInt(Mathf.Abs(h)));
 
             if (CrossPlatformInputManager.GetButtonDown("Jump"))
             {
                 particles.Play();
-                animator.SetTrigger(ah_jump);
+                _animator.SetTrigger(ah_jump);
                 Collider2D col = Physics2D.OverlapCircle(CheckGroundTf.position, 0.1f);
                 if (col)
                 {
@@ -63,7 +60,7 @@ public class MobileControl : MonoBehaviour
             }
             if (CrossPlatformInputManager.GetButton("Hit")) //&& canAttack
             {
-                animator.SetTrigger(ah_attack);
+                _animator.SetTrigger(ah_attack);
             }
             rigi.velocity = moveToRigi;
             FlipControl(h);
@@ -72,10 +69,9 @@ public class MobileControl : MonoBehaviour
         {
             StartCoroutine(Slide());
         }
-
         if (CrossPlatformInputManager.GetButton("SpinJump"))
         {
-            animator.SetTrigger(ah_spinJump);
+            _animator.SetTrigger(ah_spinJump);
         }
     }
 
@@ -85,7 +81,7 @@ public class MobileControl : MonoBehaviour
         canSlide = false;
         rigi.gravityScale = 0;
         rigi.velocity = new Vector2(slideVelocity * transform.localScale.x, 0);
-        animator.SetTrigger(ah_slide);
+        _animator.SetTrigger(ah_slide);
         tracking.emitting = true;
 
         yield return new WaitForSeconds(slideTime);
@@ -111,12 +107,10 @@ public class MobileControl : MonoBehaviour
     {
         canMove = true;
         attackCol.SetActive(false);
-        //canAttack = false;
     }
     public void DejaDeAtacar()
     {
         canMove = false;
         attackCol.SetActive(true);
-        //canAttack = true;
     }
 }

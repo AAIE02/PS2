@@ -1225,7 +1225,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 812736607}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &452181459
 GameObject:
@@ -1824,7 +1824,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 812736607}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -1977,6 +1977,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timePerDamage: 1
+  timeNextDamage: 0
 --- !u!61 &534868503
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2068,7 +2069,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 812736607}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &572767574
 GameObject:
@@ -2951,7 +2952,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 966239856}
   - {fileID: 1397630476}
   - {fileID: 1984370944}
   - {fileID: 1782448493}
@@ -2960,6 +2960,7 @@ Transform:
   - {fileID: 493482272}
   - {fileID: 1927462966}
   - {fileID: 421351487}
+  - {fileID: 966239856}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3382,6 +3383,7 @@ MonoBehaviour:
   controladorDePlataforma: {fileID: 868145710}
   distance: 1.3
   movimientoDerecha: 1
+  _rigi: {fileID: 0}
 --- !u!212 &879786021
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3711,7 +3713,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 812736607}
-  m_RootOrder: 0
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &973872583
 GameObject:
@@ -4015,6 +4017,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timePerDamage: 1
+  timeNextDamage: 0
 --- !u!61 &1078991573
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4106,7 +4109,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 812736607}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1108662880
 GameObject:
@@ -4842,6 +4845,8 @@ MonoBehaviour:
   vida: 0
   maxVida: 15
   barraDeVida: {fileID: 1729318063}
+  _animator: {fileID: 0}
+  ah_death: 569220492
 --- !u!114 &1385662931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4858,10 +4863,18 @@ MonoBehaviour:
   velocidadSalto: 18
   CheckGroundTf: {fileID: 629203425}
   canMove: 1
+  ah_velocidad: 732246236
+  ah_attack: -1130678506
+  ah_jump: 507951781
+  ah_slide: -1809564513
+  ah_spinJump: 1358331528
+  _animator: {fileID: 0}
   particles: {fileID: 1879142282}
   slideVelocity: 20
   slideTime: 0.4
   tracking: {fileID: 1832394486}
+  initialGravity: 0
+  canSlide: 1
   attackCol: {fileID: 115537464}
 --- !u!50 &1385662932
 Rigidbody2D:
@@ -5013,7 +5026,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 812736607}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1433224569
 GameObject:
@@ -5732,6 +5745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 165221a25168b4043b4eea0aa2b98c19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Hp_bar: {fileID: 1729318062}
 --- !u!1 &1730854031
 GameObject:
   m_ObjectHideFlags: 0
@@ -6114,7 +6128,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 812736607}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1783821197
 GameObject:
@@ -11389,6 +11403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timePerDamage: 1
+  timeNextDamage: 0
 --- !u!61 &1927462964
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11480,7 +11495,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 812736607}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1928942133
 GameObject:
@@ -11719,6 +11734,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuGameOver: {fileID: 293992522}
+  hp: {fileID: 0}
 --- !u!114 &1952302015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11834,6 +11850,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab0a1c334b6233042bc540ba1e1992f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cinemachineVirtualCamera: {fileID: 0}
+  _cinemachineBasicMultichannelPerlin: {fileID: 0}
+  timeMovement: 0
+  initialMovementTime: 0
+  initialIntencity: 0
 --- !u!1 &1984370940
 GameObject:
   m_ObjectHideFlags: 0
@@ -11947,7 +11968,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 812736607}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2000460025
 GameObject:

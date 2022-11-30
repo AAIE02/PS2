@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -44,6 +41,7 @@ public class UIManager : MonoBehaviour
         victoryCondition.SetActive(true);
         txtVictoryCondition.text = "You need " + (_winCondition - _soulValue) + " more souls";
     }
+
     public void HideWinCondition()
     {
         victoryCondition.SetActive(false);

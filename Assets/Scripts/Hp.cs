@@ -1,23 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 using System;
-using UnityEngine.SceneManagement;
 
 public class Hp : MonoBehaviour
 {
     [SerializeField] private float vida;
     [SerializeField] private float maxVida;
     [SerializeField] private HP_Bar barraDeVida;
+    [SerializeField] Animator _animator;
+    [SerializeField] int ah_death = Animator.StringToHash("IsDeath");
     public event EventHandler PlayerDeath;
-    Animator animator;
-    int ah_death = Animator.StringToHash("IsDeath");
-
 
     void Start()
     {
-        animator = GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
         vida = maxVida;
         barraDeVida.BarraDeVida(vida);
     }
@@ -28,9 +23,9 @@ public class Hp : MonoBehaviour
         barraDeVida.ChangeCurrentHP(vida);
         if(vida <= 0)
         {
-            animator.SetTrigger(ah_death);
             PlayerDeath?.Invoke(this, EventArgs.Empty);
-            Destroy(gameObject, 0.9f);
+            _animator.SetTrigger(ah_death);
+            Destroy(gameObject, 0.8f);
         }
     }
 

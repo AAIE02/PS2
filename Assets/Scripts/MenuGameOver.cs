@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
@@ -7,7 +5,8 @@ using System;
 public class MenuGameOver : MonoBehaviour
 {
     [SerializeField] private GameObject menuGameOver;
-    private Hp hp;
+
+    [SerializeField] private Hp hp;
 
     private void Start()
     {
@@ -29,10 +28,4 @@ public class MenuGameOver : MonoBehaviour
     {
         SceneManager.LoadScene(name);
     }
-
-    /*public void Exit()
-    {
-        UnityEditor.EditorApplication.isPlaying = false;
-        Application.Quit();
-    }*/
 }
