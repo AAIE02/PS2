@@ -98,8 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e36397eb5e4b75b41b5bc3fee240cb9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timePerDamage: 5
-  timeNextDamage: 1
+  timePerDamage: 1
+  timeNextDamage: 0
 --- !u!61 &-6060958914888490427
 BoxCollider2D:
   m_ObjectHideFlags: 0
