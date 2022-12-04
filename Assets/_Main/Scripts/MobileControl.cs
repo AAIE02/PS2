@@ -28,8 +28,11 @@ public class MobileControl : MonoBehaviour
     [SerializeField] private bool canSlide = true;
 
     [Header("SpinJump")]
-
-
+    [SerializeField] private float spinJumpVelocity;
+    [SerializeField] private float spinJumpTime;
+    [SerializeField] private bool canSpinJump = true;
+    [SerializeField] private float initialGra;
+ 
     [Header("Attack")]
     public GameObject attackCol;
 
@@ -38,6 +41,7 @@ public class MobileControl : MonoBehaviour
         rigi = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         initialGravity = rigi.gravityScale;
+        initialGra = rigi.gravityScale;
     }
 
     void Update()
@@ -69,9 +73,11 @@ public class MobileControl : MonoBehaviour
         {
             StartCoroutine(Slide());
         }
-        if (CrossPlatformInputManager.GetButton("SpinJump"))
+        if (CrossPlatformInputManager.GetButton("SpinJump") && canSpinJump)
         {
-            _animator.SetTrigger(ah_spinJump);
+            particles.Play();
+            StartCoroutine(SpinJump());
+
         }
     }
 
@@ -90,6 +96,21 @@ public class MobileControl : MonoBehaviour
         canSlide=true;
         rigi.gravityScale = initialGravity;
         tracking.emitting = false;
+    }
+
+    private IEnumerator SpinJump()
+    {
+        canMove = false;
+        canSpinJump = false;
+        rigi.gravityScale = 0;
+        rigi.velocity = new Vector2(spinJumpVelocity * transform.localScale.x, 0);
+        _animator.SetTrigger(ah_spinJump);
+
+        yield return new WaitForSeconds(spinJumpTime);
+
+        canMove = true;
+        canSpinJump = true;
+        rigi.gravityScale = initialGra;
     }
     
     private void FlipControl(float h)
