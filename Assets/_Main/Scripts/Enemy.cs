@@ -4,6 +4,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float HitDamage;
     [SerializeField] private float Vida;
     [SerializeField] private float VidaActualDelEnemigo;
+    [SerializeField] private float SpinJumpDamage;
 
     void Start()
     {
@@ -23,6 +24,11 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.CompareTag("AtaqueJugador"))
         {
             VidaActualDelEnemigo -= HitDamage;
+            if (collision.gameObject.CompareTag("SpinJumpCollider"))
+            {
+                VidaActualDelEnemigo -= SpinJumpDamage;
+                Debug.Log(VidaActualDelEnemigo);
+            }
         }
     }
 }

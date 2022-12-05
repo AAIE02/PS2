@@ -4,7 +4,7 @@ public class Spawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] enemigos;
     [SerializeField] private float TimeSpawn = 1;
-    [SerializeField] private float RepeatSpawnTime = 5;
+    [SerializeField] private float RepeatSpawnTime = 3;
     [SerializeField] private Transform XRangeLeft;
     [SerializeField] private Transform XRangeRight;
     [SerializeField] private Transform YRangeUp;

@@ -11,8 +11,9 @@ public class GameManager : MonoBehaviour
     public int world { get; private set; } 
     public int stage { get; private set; }
 
+    [SerializeField] private AudioClip[] TakedSoul;
     public event EventHandler PlayerWins;
-    private int colledtedSouls, victoryCondition = 5;
+    private int colledtedSouls, victoryCondition = 8;
 
     private void Awake()
     {
@@ -87,7 +88,9 @@ public class GameManager : MonoBehaviour
     public void AddSoul(int _souls)   //Agrega Monedas
     {
         colledtedSouls += _souls;
+        SoundManager.Instance.ArrayRandomisedSoundEffect(TakedSoul);
         UIManager.MyInstance.SoulUI(colledtedSouls, victoryCondition);
+        AddSacredSoul();
     }
 
     public void AddSacredSoul() //agrega 1 vida al player

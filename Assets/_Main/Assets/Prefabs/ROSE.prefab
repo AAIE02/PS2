@@ -160,3 +160,4 @@ MonoBehaviour:
   HitDamage: 1
   Vida: 2
   VidaActualDelEnemigo: 0
+  SpinJumpDamage: 3

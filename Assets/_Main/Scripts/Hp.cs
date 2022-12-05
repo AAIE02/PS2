@@ -8,6 +8,9 @@ public class Hp : MonoBehaviour
     [SerializeField] private HP_Bar barraDeVida;
     [SerializeField] Animator _animator;
     [SerializeField] int ah_death = Animator.StringToHash("IsDeath");
+    [SerializeField] private AudioClip[] TakeD;
+    [SerializeField] private ParticleSystem DamageP;
+    [SerializeField] private AudioClip[] Death;
     public event EventHandler PlayerDeath;
 
     void Start()
@@ -19,11 +22,14 @@ public class Hp : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        DamageP.Play();
+        SoundManager.Instance.ArrayRandomisedSoundEffect(TakeD);
         vida -= damage;
         barraDeVida.ChangeCurrentHP(vida);
         if(vida <= 0)
         {
             PlayerDeath?.Invoke(this, EventArgs.Empty);
+            SoundManager.Instance.ArrayRandomisedSoundEffect(Death);
             _animator.SetTrigger(ah_death);
             Destroy(gameObject, 0.8f);
         }

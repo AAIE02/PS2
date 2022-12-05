@@ -11,6 +11,7 @@ public class MobileControl : MonoBehaviour
     private Rigidbody2D rigi;
     [SerializeField] private bool canMove = true;
 
+
     [Header("Animation")]
     [SerializeField] private int ah_velocidad = Animator.StringToHash("Velocidad");
     [SerializeField] private int ah_attack = Animator.StringToHash("IsAttacking");
@@ -28,6 +29,7 @@ public class MobileControl : MonoBehaviour
     [SerializeField] private bool canSlide = true;
 
     [Header("SpinJump")]
+    public GameObject SpinJumpCollider;
     [SerializeField] private float spinJumpVelocity;
     [SerializeField] private float spinJumpTime;
     [SerializeField] private bool canSpinJump = true;
@@ -36,8 +38,16 @@ public class MobileControl : MonoBehaviour
     [Header("Attack")]
     public GameObject attackCol;
 
+    [Header("Sounds")]
+    [SerializeField] private AudioClip BackGroundMusic;
+    [SerializeField] private AudioClip[] AttackSounds;
+    [SerializeField] private AudioClip[] JumpSounds;
+    [SerializeField] private AudioClip SlideSound;
+    [SerializeField] private AudioClip SpinJumpSound;
+
     void Start()
     {
+        SoundManager.Instance.PlayMusic(BackGroundMusic);
         rigi = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         initialGravity = rigi.gravityScale;
@@ -61,10 +71,12 @@ public class MobileControl : MonoBehaviour
                 {
                     moveToRigi.y = velocidadSalto;
                 }
+                SoundManager.Instance.ArrayRandomisedSoundEffect(JumpSounds);
             }
             if (CrossPlatformInputManager.GetButton("Hit")) //&& canAttack
             {
                 _animator.SetTrigger(ah_attack);
+                SoundManager.Instance.ArrayRandomisedSoundEffect(AttackSounds);
             }
             rigi.velocity = moveToRigi;
             FlipControl(h);
@@ -72,6 +84,7 @@ public class MobileControl : MonoBehaviour
         if (CrossPlatformInputManager.GetButton("Slide") && canSlide)
         {
             StartCoroutine(Slide());
+            
         }
         if (CrossPlatformInputManager.GetButton("SpinJump") && canSpinJump)
         {
@@ -89,6 +102,7 @@ public class MobileControl : MonoBehaviour
         rigi.velocity = new Vector2(slideVelocity * transform.localScale.x, 0);
         _animator.SetTrigger(ah_slide);
         tracking.emitting = true;
+        SoundManager.Instance.PlaySFX(SlideSound);
 
         yield return new WaitForSeconds(slideTime);
 
@@ -105,6 +119,7 @@ public class MobileControl : MonoBehaviour
         rigi.gravityScale = 0;
         rigi.velocity = new Vector2(spinJumpVelocity * transform.localScale.x, 0);
         _animator.SetTrigger(ah_spinJump);
+        SoundManager.Instance.PlaySFX(SpinJumpSound);
 
         yield return new WaitForSeconds(spinJumpTime);
 

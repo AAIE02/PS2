@@ -158,5 +158,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HitDamage: 1
-  Vida: 5
+  Vida: 6
   VidaActualDelEnemigo: 0
+  SpinJumpDamage: 3
